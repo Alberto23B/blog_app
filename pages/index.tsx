@@ -7,7 +7,7 @@ export default function Home({ posts }: { posts: Post[] }) {
   return (
     <>
       <Navbar />
-      <main className='flex items-center justify-center min-h-screen pt-20 pb-20 font-[family-name:var(--font-geist-sans)]'>
+      <main className='flex items-center justify-center min-h-screen py-20'>
         <div className='sm:block hidden border w-1/4 flex-shrink border-white'>
           <p>side 1</p>
         </div>
