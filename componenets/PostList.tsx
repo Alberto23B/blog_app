@@ -1,5 +1,5 @@
 import { Post } from '@/types/Types';
-import { capitalizeTitle, limitText } from '@/helpers/postFunctions';
+import { capitalizeTitle, limitText } from '@/lib/helpers';
 
 export default function PostList({ posts }: { posts: Post[] }) {
   return (
