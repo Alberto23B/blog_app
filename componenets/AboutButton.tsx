@@ -12,12 +12,12 @@ export default function AboutButton() {
   }, [pathname]);
 
   const buttonStyle = {
-    inactive: 'w-full',
-    active: 'w-full active:bg-slate-500 hover:bg-slate-200',
+    inactive: 'w-full hover:bg-[#393737] cursor-pointer',
+    active: 'w-full active:bg-slate-600 hover:bg-[#393737] cursor-pointer',
   };
 
   return (
-    <Link className='w-1/2  border ' href='/about'>
+    <Link className='w-1/2 text-2xl bord ' href='/about'>
       <button className={isActive ? buttonStyle.active : buttonStyle.inactive}>
         About {isActive ? '(current)' : ''}
       </button>

@@ -10,7 +10,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
         const body = limitText(post.body, 100);
 
         return (
-          <div key={post.id} className='border border-black'>
+          <div key={post.id} className='bord rounded-br-xl'>
             <Link href={`/posts/${post.id}`}>
               <h2 className='text-2xl font-bold border-b border-white my-2'>
                 {title}
