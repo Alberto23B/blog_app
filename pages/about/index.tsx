@@ -1,3 +1,9 @@
+import Layout from '@/componenets/Layout';
+
 export default function About() {
-  return <p>About page</p>;
+  return (
+    <Layout>
+      <p>About page</p>
+    </Layout>
+  );
 }
