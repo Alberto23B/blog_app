@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f1f7ed;
   --foreground: #171717;
+  --highlight: #f9bc60;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #232020;
+    --foreground: #f1f7ed;
+    --highlight: #f9bc60;
   }
 }
 
@@ -18,4 +20,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button:active {
+  background: var(--highlight);
 }
