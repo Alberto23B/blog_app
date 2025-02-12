@@ -6,7 +6,6 @@ import Link from 'next/link';
 export default function AboutButton() {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState(pathname === '/about');
-  console.log(pathname);
 
   useEffect(() => {
     setIsActive(pathname === '/about');
