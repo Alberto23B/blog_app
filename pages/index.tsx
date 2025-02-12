@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import PostContainer from '@/componenets/PostContainer';
+import PostContainer from '@/componenets/PostsContainer';
 import { Post } from '@/types/Types';
 import Layout from '@/componenets/Layout';
 import Container from '@/componenets/Container';
