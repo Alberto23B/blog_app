@@ -1,19 +1,23 @@
 @import 'tailwindcss';
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #f1f7ed;
   --foreground: #171717;
-  --highlight: #f9bc60;
+  --border: #393737;
+}
+
+@layer utilities {
+  .bord {
+    border-right: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #232020;
     --foreground: #f1f7ed;
-    --highlight: #f9bc60;
   }
 }
 

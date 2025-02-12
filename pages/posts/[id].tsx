@@ -3,6 +3,9 @@ import { Post } from '@/types/Types';
 import { capitalizeTitle } from '@/lib/helpers';
 import Layout from '@/componenets/Layout';
 import ErrorPage from 'next/error';
+import Header from '@/componenets/Header';
+import Body from '@/componenets/Body';
+import Image from 'next/image';
 
 export default function PostPage({ post }: { post: Post }) {
   const router = useRouter();
@@ -16,8 +19,10 @@ export default function PostPage({ post }: { post: Post }) {
   return (
     <>
       <Layout>
-        <div>
-          <h1>{title}</h1>
+        <div className='m-auto w-2/3 py-20 grid bord rounded-br-xl'>
+          <Header>{title}</Header>
+          <Body>{post.body}</Body>
+          <Image src='/vercel.svg' width={200} height={200} alt='placeholder' />
         </div>
       </Layout>
     </>
