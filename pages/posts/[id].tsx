@@ -7,12 +7,11 @@ import ErrorPage from 'next/error';
 import Header from '@/componenets/Header';
 import Body from '@/componenets/Body';
 import Image from 'next/image';
-// import HashGrid from '@/componenets/HashGrid';
+import HashGrid from '@/componenets/HashGrid';
 
 export default function PostPage({ post }: { post: Post }) {
   const router = useRouter();
   const hashtags = generateHashtags(post.title);
-  console.log(hashtags);
 
   if (!router.isFallback && !post?.id) {
     return <ErrorPage statusCode={404} />;
@@ -23,11 +22,11 @@ export default function PostPage({ post }: { post: Post }) {
   return (
     <>
       <Layout>
-        <div className='m-auto w-2/3 py-20 grid bord rounded-br-xl'>
+        <div className='m-auto w-2/3 pt-20 py-10 grid bord rounded-br-xl'>
           <Header>{title}</Header>
           <Body>{post.body}</Body>
           <Image src='/vercel.svg' width={200} height={200} alt='placeholder' />
-          {/* <HashGrid > */}
+          <HashGrid hashtags={hashtags} visibility={true} />
         </div>
       </Layout>
     </>

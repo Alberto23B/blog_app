@@ -29,7 +29,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
                 </Link>
               </p>
             </div>
-            <HashGrid hashtags={hashtags} />
+            <HashGrid hashtags={hashtags} visibility={false} />
           </div>
         );
       })}

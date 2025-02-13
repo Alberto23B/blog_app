@@ -2,8 +2,14 @@
 import Hashtag from './Hashtag';
 import { useState } from 'react';
 
-export default function HashGrid({ hashtags }: { hashtags: string[] }) {
-  const [visible, setVisible] = useState(false);
+export default function HashGrid({
+  hashtags,
+  visibility = false,
+}: {
+  hashtags: string[];
+  visibility: boolean;
+}) {
+  const [visible, setVisible] = useState(visibility);
 
   return (
     <div className='flex justify-start overflow-scroll mx-4 no-scrollbar gap-2'>
