@@ -1,15 +1,18 @@
 import { useRouter } from 'next/router';
 import { Post } from '@/types/Types';
-import { capitalizeTitle } from '@/lib/helpers';
+import { capitalizeTitle, generateHashtags } from '@/lib/helpers';
 import { GetStaticPropsContext } from 'next';
 import Layout from '@/componenets/Layout';
 import ErrorPage from 'next/error';
 import Header from '@/componenets/Header';
 import Body from '@/componenets/Body';
 import Image from 'next/image';
+// import HashGrid from '@/componenets/HashGrid';
 
 export default function PostPage({ post }: { post: Post }) {
   const router = useRouter();
+  const hashtags = generateHashtags(post.title);
+  console.log(hashtags);
 
   if (!router.isFallback && !post?.id) {
     return <ErrorPage statusCode={404} />;
@@ -24,6 +27,7 @@ export default function PostPage({ post }: { post: Post }) {
           <Header>{title}</Header>
           <Body>{post.body}</Body>
           <Image src='/vercel.svg' width={200} height={200} alt='placeholder' />
+          {/* <HashGrid > */}
         </div>
       </Layout>
     </>
