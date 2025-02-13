@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { Post } from '@/types/Types';
 import { capitalizeTitle } from '@/lib/helpers';
+import { GetStaticPropsContext } from 'next';
 import Layout from '@/componenets/Layout';
 import ErrorPage from 'next/error';
 import Header from '@/componenets/Header';
@@ -29,16 +30,18 @@ export default function PostPage({ post }: { post: Post }) {
   );
 }
 
-export async function getStaticProps({ params }: { params: { id: string } }) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/`);
+export async function getStaticProps(
+  context: GetStaticPropsContext<{ id: string }>
+) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${context.params?.id}`
+  );
 
   const data = await res.json();
 
-  const selectedPost = data.find((post: Post) => post.id === Number(params.id));
-
   return {
     props: {
-      post: selectedPost,
+      post: data,
     },
   };
 }
