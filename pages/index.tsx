@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import PostContainer from '@/componenets/PostsContainer';
 import { Post } from '@/types/Types';
+import { filterPosts } from '@/lib/helpers';
 import Layout from '@/componenets/Layout';
 import Container from '@/componenets/Container';
 import SearchBar from '@/componenets/SearchBar';
@@ -11,13 +12,7 @@ export default function Home({ posts }: { posts: Post[] }) {
   const router = useRouter();
   const { hashtag } = router.query;
 
-  const regex = new RegExp(`${hashtag}`);
-
-  const filteredPosts = hashtag
-    ? posts.filter((post) => {
-        return regex.test(post.title);
-      })
-    : posts;
+  const filteredPosts = filterPosts(hashtag, posts);
 
   const handleHashtagClick = (tag: string) => {
     console.log('test');

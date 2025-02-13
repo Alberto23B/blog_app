@@ -1,3 +1,5 @@
+import { Post } from '@/types/Types';
+
 export function limitText(text: string, limit: number): string {
   return text.length > limit ? text.slice(0, limit) + '...' : text;
 }
@@ -29,4 +31,12 @@ export function generateHashtags(title: string): string[] {
   const uniqueHashtags = Array.from(setHashtags);
 
   return uniqueHashtags;
+}
+
+export function filterPosts(
+  hashtag: string | string[] | undefined,
+  posts: Post[]
+) {
+  const regex = new RegExp(`${hashtag}`);
+  return hashtag ? posts.filter((post) => regex.test(post.title)) : posts;
 }
