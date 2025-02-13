@@ -15,3 +15,7 @@ export interface HashProps {
   hashtag: string;
   handleClick: (tag: string) => void | undefined;
 }
+
+export interface FreqMap {
+  [key: string]: number;
+}

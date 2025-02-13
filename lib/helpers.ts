@@ -21,6 +21,8 @@ export function generateHashtags(title: string): string[] {
 
       if (word.length === 2 && word[0] !== word[0].toUpperCase()) return false;
 
+      if (word.length === 3 && word[0] !== word[0].toUpperCase()) return false;
+
       if (blacklist.includes(word.toLowerCase())) return false;
 
       return true;

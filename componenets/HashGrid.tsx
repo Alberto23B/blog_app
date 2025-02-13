@@ -11,7 +11,7 @@ export default function HashGrid({
   const [visible, setVisible] = useState(visibility);
 
   return (
-    <div className='flex justify-start overflow-scroll mx-4 no-scrollbar gap-2'>
+    <div className='flex justify-start overflow-scroll flex-wrap mx-4 no-scrollbar gap-2'>
       {!visible && (
         <button
           className='rounded-xl bg-[#393737] w-fit px-4 inline-block'
