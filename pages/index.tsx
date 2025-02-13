@@ -15,15 +15,13 @@ export default function Home({ posts }: { posts: Post[] }) {
 
   const filteredPosts = filterPosts(hashtag, posts);
 
-  const hashtagFrequency: string[] = useMemo(() => {
+  const popularHashtags: string[] = useMemo(() => {
     const freqMap: FreqMap = {};
 
     posts.forEach((post) => {
       const tags = generateHashtags(post.title);
       tags.forEach((tag) => (freqMap[tag] = (freqMap[tag] || 0) + 1));
     });
-
-    console.log(Object.entries(freqMap));
 
     return Object.entries(freqMap)
       .map(([tag, count]) => ({ tag, count }))
@@ -33,15 +31,12 @@ export default function Home({ posts }: { posts: Post[] }) {
   }, [posts]);
 
   const handleHashtagClick = (tag: string) => {
-    console.log('test');
     if (hashtag === tag) {
       router.push({ pathname: '/', query: {} });
     } else {
       router.push({ pathname: '/', query: { hashtag: tag } });
     }
   };
-
-  console.log(hashtagFrequency);
 
   return (
     <>
@@ -55,7 +50,7 @@ export default function Home({ posts }: { posts: Post[] }) {
             <SearchBar />
             <h2 className='m-4'>Buzzing right now:</h2>
             <HashGrid
-              hashtags={hashtagFrequency}
+              hashtags={popularHashtags}
               visibility={true}
               handleClick={handleHashtagClick}
             />

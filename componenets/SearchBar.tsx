@@ -6,7 +6,6 @@ export default function SearchBar() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log('Test');
   };
 
   return (
