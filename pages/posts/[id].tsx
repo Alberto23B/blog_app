@@ -11,13 +11,22 @@ import HashGrid from '@/componenets/HashGrid';
 
 export default function PostPage({ post }: { post: Post }) {
   const router = useRouter();
-  const hashtags = generateHashtags(post.title);
+  const postHashtags = generateHashtags(post.title);
+  const { hashtag } = router.query;
 
   if (!router.isFallback && !post?.id) {
     return <ErrorPage statusCode={404} />;
   }
 
   const title = capitalizeTitle(post.title);
+
+  const handleHashtagClick = (tag: string) => {
+    if (hashtag === tag) {
+      router.push({ pathname: '/', query: {} });
+    } else {
+      router.push({ pathname: '/', query: { hashtag: tag } });
+    }
+  };
 
   return (
     <>
@@ -26,7 +35,11 @@ export default function PostPage({ post }: { post: Post }) {
           <Header>{title}</Header>
           <Body>{post.body}</Body>
           <Image src='/vercel.svg' width={200} height={200} alt='placeholder' />
-          <HashGrid hashtags={hashtags} visibility={true} />
+          <HashGrid
+            hashtags={postHashtags}
+            visibility={true}
+            handleClick={handleHashtagClick}
+          />
         </div>
       </Layout>
     </>

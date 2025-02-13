@@ -1,9 +1,21 @@
 import { Post } from '@/types/Types';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { capitalizeTitle, limitText, generateHashtags } from '@/lib/helpers';
 import HashGrid from '@/componenets/HashGrid';
 
 export default function PostList({ posts }: { posts: Post[] }) {
+  const router = useRouter();
+  const { hashtag } = router.query;
+
+  const handleHashtagClick = (tag: string) => {
+    if (hashtag === tag) {
+      router.push({ pathname: '/', query: {} });
+    } else {
+      router.push({ pathname: '/', query: { hashtag: tag } });
+    }
+  };
+
   return (
     <>
       {posts.map((post) => {
@@ -29,7 +41,11 @@ export default function PostList({ posts }: { posts: Post[] }) {
                 </Link>
               </p>
             </div>
-            <HashGrid hashtags={hashtags} visibility={false} />
+            <HashGrid
+              hashtags={hashtags}
+              visibility={false}
+              handleClick={handleHashtagClick}
+            />
           </div>
         );
       })}

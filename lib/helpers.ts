@@ -1,3 +1,5 @@
+import { NextRouter } from 'next/router';
+
 export function limitText(text: string, limit: number): string {
   return text.length > limit ? text.slice(0, limit) + '...' : text;
 }
@@ -34,3 +36,16 @@ export function generateHashtags(title: string): string[] {
 
   return uniqueHashtags;
 }
+
+export const handleHashtagClick = (
+  tag: string,
+  hashtag: string,
+  router: NextRouter
+) => {
+  // Se il tag cliccato è già attivo, rimuovi il filtro
+  if (hashtag === tag) {
+    router.push({ pathname: '/', query: {} });
+  } else {
+    router.push({ pathname: '/', query: { hashtag: tag } });
+  }
+};

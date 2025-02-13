@@ -1,14 +1,13 @@
 'use client';
+import { HashGridProps } from '@/types/Types';
 import Hashtag from './Hashtag';
 import { useState } from 'react';
 
 export default function HashGrid({
   hashtags,
+  handleClick,
   visibility = false,
-}: {
-  hashtags: string[];
-  visibility: boolean;
-}) {
+}: HashGridProps) {
   const [visible, setVisible] = useState(visibility);
 
   return (
@@ -23,7 +22,9 @@ export default function HashGrid({
       )}
       {visible &&
         hashtags.map((hashtag, i) => {
-          return <Hashtag key={i} hashtag={hashtag} />;
+          return (
+            <Hashtag key={i} hashtag={hashtag} handleClick={handleClick} />
+          );
         })}
     </div>
   );

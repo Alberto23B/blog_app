@@ -4,3 +4,14 @@ export interface Post {
   title: string;
   body: string;
 }
+
+export interface HashGridProps {
+  hashtags: string[];
+  handleClick: (tag: string) => void | undefined;
+  visibility: boolean;
+}
+
+export interface HashProps {
+  hashtag: string;
+  handleClick: (tag: string) => void | undefined;
+}
