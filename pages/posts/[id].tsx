@@ -31,10 +31,16 @@ export default function PostPage({ post }: { post: Post }) {
   return (
     <>
       <Layout>
-        <div className='m-auto w-2/3 pt-20 py-10 grid bord rounded-br-xl'>
+        <div className='m-auto w-2/3 pt-20 py-10 flex flex-wrap  bord rounded-br-xl'>
           <Header>{title}</Header>
           <Body>{post.body}</Body>
-          <Image src='/vercel.svg' width={200} height={200} alt='placeholder' />
+          <Image
+            src='/vercel.svg'
+            width={180}
+            height={180}
+            alt='placeholder'
+            className='mx-auto my-4'
+          />
           <HashGrid
             hashtags={postHashtags}
             visibility={true}

@@ -1,7 +1,7 @@
 export default function Body({ children }: { children: React.ReactNode }) {
   return (
-    <div className='m-auto col-span-2'>
-      <p className='text-2xl'>{children}</p>
+    <div className='mx-auto my-2 w-3/5 '>
+      <p className='text-2xl my-auto'>{children}</p>
     </div>
   );
 }
