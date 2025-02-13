@@ -39,7 +39,7 @@ export default function PostPage({ post }: { post: Post }) {
             width={180}
             height={180}
             alt='placeholder'
-            className='mx-auto my-4 max-w-max'
+            className='mx-auto my-4'
           />
           <HashGrid
             hashtags={postHashtags}
