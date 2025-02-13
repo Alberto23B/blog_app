@@ -31,7 +31,7 @@ export default function PostPage({ post }: { post: Post }) {
   return (
     <>
       <Layout>
-        <div className='m-auto w-2/3 pt-20 py-10 flex flex-wrap  bord rounded-br-xl'>
+        <div className='m-auto w-2/3 py-10 flex flex-wrap  bord rounded-br-xl'>
           <Header>{title}</Header>
           <Body>{post.body}</Body>
           <Image
@@ -39,7 +39,7 @@ export default function PostPage({ post }: { post: Post }) {
             width={180}
             height={180}
             alt='placeholder'
-            className='mx-auto my-4'
+            className='mx-auto my-4 max-w-max'
           />
           <HashGrid
             hashtags={postHashtags}

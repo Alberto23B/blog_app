@@ -13,12 +13,18 @@
     border-right: 2px solid var(--border);
     border-bottom: 2px solid var(--border);
   }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .animate-lineHeightExpand {
+    animation: lineHeightExpand 800ms ease-in-out forwards;
   }
 }
 
@@ -36,4 +42,15 @@ body {
 
 button:active {
   background: var(--highlight);
+}
+
+@keyframes lineHeightExpand {
+  from {
+    line-height: 2rem;
+    opacity: 0;
+  }
+  to {
+    line-height: 5rem;
+    opacity: 1;
+  }
 }
