@@ -1,5 +1,3 @@
-import { NextRouter } from 'next/router';
-
 export function limitText(text: string, limit: number): string {
   return text.length > limit ? text.slice(0, limit) + '...' : text;
 }
@@ -21,14 +19,10 @@ export function generateHashtags(title: string): string[] {
 
       if (word.length === 2 && word[0] !== word[0].toUpperCase()) return false;
 
-      // Escludi parole della blacklist (in modo case-insensitive)
       if (blacklist.includes(word.toLowerCase())) return false;
 
       return true;
     })
-    // Eventualmente formatta le parole come hashtag (opzionale)
-    .map((word) => word.replace(/[^a-zA-Z0-9]/g, ''))
-    // Rimuove eventuali stringhe vuote dopo la pulizia
     .filter(Boolean);
 
   const setHashtags = new Set(filteredTitle);
@@ -36,16 +30,3 @@ export function generateHashtags(title: string): string[] {
 
   return uniqueHashtags;
 }
-
-export const handleHashtagClick = (
-  tag: string,
-  hashtag: string,
-  router: NextRouter
-) => {
-  // Se il tag cliccato è già attivo, rimuovi il filtro
-  if (hashtag === tag) {
-    router.push({ pathname: '/', query: {} });
-  } else {
-    router.push({ pathname: '/', query: { hashtag: tag } });
-  }
-};
