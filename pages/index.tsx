@@ -10,12 +10,12 @@ export default function Home({ posts }: { posts: Post[] }) {
     <>
       <Layout>
         <Container>
-          <div className='sm:flex flex-col hidden w-1/4 flex-shrink bord'>
-            <SearchBar />
+          <div className='flex-shrink w-1/3 sm:block hidden '>
+            <p>BlogApp</p>
           </div>
           <PostContainer posts={posts} />
-          <div className='flex-shrink w-1/4 sm:block hidden bord'>
-            <p>side 2</p>
+          <div className='sm:flex flex-col hidden w-1/3 flex-shrink '>
+            <SearchBar />
           </div>
         </Container>
       </Layout>
