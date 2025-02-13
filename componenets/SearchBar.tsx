@@ -1,16 +1,24 @@
 'use client';
 import { useState } from 'react';
 
-export default function SearchBar() {
+export default function SearchBar({
+  handleClick,
+}: {
+  handleClick: (tag: string) => void;
+}) {
   const [query, setQuery] = useState('');
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent, searchQuery: string) => {
     e.preventDefault();
+    handleClick(searchQuery);
   };
 
   return (
     <>
-      <form className='mx-auto py-10 h-min'>
+      <form
+        className='mx-auto py-10 h-min'
+        onSubmit={(e) => handleSubmit(e, query)}
+      >
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -19,7 +27,6 @@ export default function SearchBar() {
         />
         <input
           type='submit'
-          onSubmit={handleSubmit}
           value={'Search'}
           className='bord rounded-r-xl h-10'
         />

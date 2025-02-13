@@ -47,7 +47,7 @@ export default function Home({ posts }: { posts: Post[] }) {
           </div>
           <PostContainer posts={filteredPosts} />
           <div className='sm:flex flex-col hidden w-1/3 flex-shrink '>
-            <SearchBar />
+            <SearchBar handleClick={handleHashtagClick} />
             <h2 className='m-4'>Buzzing right now:</h2>
             <HashGrid
               hashtags={popularHashtags}
