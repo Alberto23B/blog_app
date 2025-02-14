@@ -53,6 +53,10 @@ nav {
   background: #686868;
 }
 
+button {
+  cursor: pointer;
+}
+
 @keyframes lineHeightExpand {
   from {
     line-height: 2rem;
