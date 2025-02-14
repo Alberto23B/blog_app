@@ -11,16 +11,13 @@ export default function HomeButton() {
     setIsActive(pathname === '/');
   }, [pathname]);
 
-  const buttonStyle = {
-    inactive: 'w-full cursor-pointer active:bg-[#f1f7ed]',
-    active: 'w-full active:bg-[#f1f7ed] text-[#f1f7ed] cursor-pointer',
-  };
+  const buttonStyle = isActive
+    ? 'w-full text-[#f1f7ed] text-center cursor-pointer text-2xl block underline'
+    : 'w-full cursor-pointer text-center text-2xl block active:underline';
 
   return (
-    <Link className='w-full text-2xl ' href='/'>
-      <button className={isActive ? buttonStyle.active : buttonStyle.inactive}>
-        Home
-      </button>
+    <Link href='/' className={buttonStyle}>
+      Home
     </Link>
   );
 }

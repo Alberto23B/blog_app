@@ -11,17 +11,13 @@ export default function AboutButton() {
     setIsActive(pathname === '/about');
   }, [pathname]);
 
-  const buttonStyle = {
-    inactive: 'w-full active:bg-[#f1f7ed] cursor-pointer',
-    active:
-      'w-full active:bg-slate-200 active:bg-[#f1f7ed] text-[#f1f7ed] cursor-pointer',
-  };
+  const buttonStyle = isActive
+    ? 'w-full text-[#f1f7ed] text-center cursor-pointer text-2xl block underline'
+    : 'w-full cursor-pointer text-center text-2xl block active:underline';
 
   return (
-    <Link className='w-full text-2xl' href='/about'>
-      <button className={isActive ? buttonStyle.active : buttonStyle.inactive}>
-        About
-      </button>
+    <Link href='/about' className={buttonStyle}>
+      About
     </Link>
   );
 }

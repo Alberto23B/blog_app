@@ -53,10 +53,6 @@ nav {
   background: #686868;
 }
 
-button:active {
-  background: var(--highlight);
-}
-
 @keyframes lineHeightExpand {
   from {
     line-height: 2rem;
