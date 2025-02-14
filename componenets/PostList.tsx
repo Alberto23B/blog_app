@@ -24,14 +24,12 @@ export default function PostList({ posts }: { posts: Post[] }) {
         const hashtags = generateHashtags(post.title);
 
         return (
-          <div key={post.id} className='bord py-2 rounded-br-xl'>
+          <div key={post.id} className='bord my-4 rounded-br-xl'>
             <Link href={`/posts/${post.id}`}>
-              <h2 className='text-xl px-4 font-bold  bg-[#393737]  my-2'>
-                {title}
-              </h2>
+              <h2 className='text-xl px-4 bg-[#393737]'>{title}</h2>
             </Link>
             <div className='p-4'>
-              <p>
+              <p className='text-sm'>
                 {body}
                 <Link
                   href={`/posts/${post.id}`}

@@ -40,6 +40,11 @@ body {
   background: var(--background);
 }
 
+nav {
+  color: var(--background);
+  background: #686868;
+}
+
 button:active {
   background: var(--highlight);
 }

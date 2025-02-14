@@ -12,12 +12,12 @@ export default function HomeButton() {
   }, [pathname]);
 
   const buttonStyle = {
-    inactive: 'w-full hover:bg-[#393737] cursor-pointer',
-    active: 'w-full active:bg-slate-600 bg-[#393737] cursor-pointer',
+    inactive: 'w-full cursor-pointer',
+    active: 'w-full active:bg-slate-600 cursor-pointer',
   };
 
   return (
-    <Link className='w-1/2 text-2xl ' href='/'>
+    <Link className='w-full text-2xl ' href='/'>
       <button className={isActive ? buttonStyle.active : buttonStyle.inactive}>
         Home
       </button>
