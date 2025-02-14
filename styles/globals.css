@@ -26,6 +26,10 @@
   .animate-lineHeightExpand {
     animation: lineHeightExpand 800ms ease-in-out forwards;
   }
+
+  .slowly {
+    animation: slowly 1200ms ease-in-out 500ms forwards;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,6 +60,15 @@ button:active {
   }
   to {
     line-height: 5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slowly {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }

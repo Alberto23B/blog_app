@@ -1,56 +1,32 @@
 import { useRouter } from 'next/router';
 import { Post } from '@/types/Types';
-import {
-  capitalizeTitle,
-  filterRelatedPosts,
-  generateHashtags,
-} from '@/lib/helpers';
+import { filterRelatedPosts, generateHashtags } from '@/lib/helpers';
 import { GetStaticPropsContext } from 'next';
 import Layout from '@/componenets/Layout';
 import ErrorPage from 'next/error';
-import Header from '@/componenets/Header';
-import Body from '@/componenets/Body';
-import Image from 'next/image';
-import HashGrid from '@/componenets/HashGrid';
+import MainPost from '@/componenets/MainPost';
+import RelatedPosts from '@/componenets/RelatedPosts';
 
-export default function PostPage({ post }: { post: Post }) {
+export default function PostPage({
+  post,
+  relatedPosts,
+}: {
+  post: Post;
+  relatedPosts: Post[];
+}) {
   const router = useRouter();
-  const postHashtags = generateHashtags(post.title);
-  const { hashtag } = router.query;
 
   if (!router.isFallback && !post?.id) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const title = capitalizeTitle(post.title);
-
-  const handleHashtagClick = (tag: string) => {
-    if (hashtag === tag) {
-      router.push({ pathname: '/', query: {} });
-    } else {
-      router.push({ pathname: '/', query: { hashtag: tag } });
-    }
-  };
-
   return (
     <>
       <Layout>
-        <div className='m-auto w-2/3 py-10 flex flex-wrap  bord rounded-br-xl'>
-          <Header>{title}</Header>
-          <Body>{post.body}</Body>
-          <Image
-            src='/vercel.svg'
-            width={180}
-            height={180}
-            alt='placeholder'
-            className='mx-auto my-4'
-          />
-          <HashGrid
-            hashtags={postHashtags}
-            visibility={true}
-            handleClick={handleHashtagClick}
-          />
+        <div className='m-auto w-2/3 py-10 flex flex-wrap bord rounded-br-xl'>
+          <MainPost post={post} />
         </div>
+        <RelatedPosts posts={relatedPosts} />
       </Layout>
     </>
   );
