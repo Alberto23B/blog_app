@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
 import { Post } from '@/types/Types';
-import { capitalizeTitle, generateHashtags } from '@/lib/helpers';
+import {
+  capitalizeTitle,
+  filterRelatedPosts,
+  generateHashtags,
+} from '@/lib/helpers';
 import { GetStaticPropsContext } from 'next';
 import Layout from '@/componenets/Layout';
 import ErrorPage from 'next/error';
@@ -59,11 +63,20 @@ export async function getStaticProps(
     `https://jsonplaceholder.typicode.com/posts/${context.params?.id}`
   );
 
-  const data = await res.json();
+  const postData = await res.json();
+
+  const postHashtags = generateHashtags(postData.title);
+
+  const allPostsRes = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+  const allPosts: Post[] = await allPostsRes.json();
+
+  const relatedPosts = filterRelatedPosts(allPosts, postData, postHashtags);
 
   return {
     props: {
-      post: data,
+      post: postData,
+      relatedPosts: relatedPosts,
     },
   };
 }

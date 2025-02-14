@@ -17,13 +17,21 @@ export function generateHashtags(title: string): string[] {
     .filter((word) => {
       if (!word) return false;
 
-      if (word.length === 1) return false;
+      if (word.length === 1) {
+        return false;
+      }
 
-      if (word.length === 2 && word[0] !== word[0].toUpperCase()) return false;
+      if (word.length === 2 && word[0] !== word[0].toUpperCase()) {
+        return false;
+      }
 
-      if (word.length === 3 && word[0] !== word[0].toUpperCase()) return false;
+      if (word.length === 3 && word[0] !== word[0].toUpperCase()) {
+        return false;
+      }
 
-      if (blacklist.includes(word.toLowerCase())) return false;
+      if (blacklist.includes(word.toLowerCase())) {
+        return false;
+      }
 
       return true;
     })
@@ -41,4 +49,20 @@ export function filterPosts(
 ) {
   const regex = new RegExp(`${hashtag}`);
   return hashtag ? posts.filter((post) => regex.test(post.title)) : posts;
+}
+
+export function filterRelatedPosts(
+  posts: Post[],
+  postData: Post,
+  postHashtags: string[]
+) {
+  const relatedPosts = posts.filter((post) => {
+    if (post.id === postData.id) {
+      return false;
+    }
+    const relatedTags = generateHashtags(post.title);
+    return relatedTags.some((tag: string) => postHashtags.includes(tag));
+  });
+
+  return relatedPosts;
 }
