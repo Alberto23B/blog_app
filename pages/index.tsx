@@ -8,6 +8,8 @@ import Layout from '@/componenets/Layout';
 import Container from '@/componenets/Container';
 import SearchBar from '@/componenets/SearchBar';
 import HashGrid from '@/componenets/HashGrid';
+import Logo from '@/componenets/Logo';
+import UserButtons from '@/componenets/UserButtons';
 
 export default function Home({ posts }: { posts: Post[] }) {
   const router = useRouter();
@@ -43,10 +45,11 @@ export default function Home({ posts }: { posts: Post[] }) {
       <Layout>
         <Container>
           <div className='flex-shrink w-1/3 sm:block hidden '>
-            <p>BlogApp</p>
+            <Logo />
+            <UserButtons />
           </div>
           <PostContainer posts={filteredPosts} />
-          <div className='sm:flex flex-col hidden w-1/3 flex-shrink '>
+          <div className='sm:flex flex-col hidden w-1/3 flex-shrink'>
             <SearchBar handleClick={handleHashtagClick} />
             <h2 className='m-4'>Buzzing right now:</h2>
             <HashGrid

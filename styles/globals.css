@@ -30,6 +30,10 @@
   .slowly {
     animation: slowly 1200ms ease-in-out 500ms forwards;
   }
+
+  .slowly-delayed {
+    animation: slowly 1200ms ease-in-out 1200ms forwards;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
