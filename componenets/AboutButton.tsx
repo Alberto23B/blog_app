@@ -12,8 +12,9 @@ export default function AboutButton() {
   }, [pathname]);
 
   const buttonStyle = {
-    inactive: 'w-full hover:bg-white cursor-pointer',
-    active: 'w-full active:bg-slate-200  cursor-pointer',
+    inactive: 'w-full active:bg-[#f1f7ed] cursor-pointer',
+    active:
+      'w-full active:bg-slate-200 active:bg-[#f1f7ed] text-[#f1f7ed] cursor-pointer',
   };
 
   return (

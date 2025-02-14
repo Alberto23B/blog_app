@@ -12,8 +12,8 @@ export default function HomeButton() {
   }, [pathname]);
 
   const buttonStyle = {
-    inactive: 'w-full cursor-pointer',
-    active: 'w-full active:bg-slate-600 cursor-pointer',
+    inactive: 'w-full cursor-pointer active:bg-[#f1f7ed]',
+    active: 'w-full active:bg-[#f1f7ed] text-[#f1f7ed] cursor-pointer',
   };
 
   return (
