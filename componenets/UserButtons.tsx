@@ -5,7 +5,7 @@ export default function UserButtons() {
         Login
       </button>
       <button className='rounded-xl bg-[#393737] text-xl mx-2 w-fit px-6 inline-block'>
-        Submit
+        Sign In
       </button>
     </div>
   );
