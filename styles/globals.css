@@ -6,6 +6,7 @@
   --foreground: #171717;
   --border: #686868;
   font-family: Arial, Helvetica, sans-serif;
+  scrollbar-gutter: stable;
 }
 
 @layer utilities {
