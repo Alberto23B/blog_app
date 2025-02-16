@@ -12,8 +12,8 @@ export default function AboutButton() {
   }, [pathname]);
 
   const buttonStyle = isActive
-    ? 'w-full text-[#f1f7ed] text-center cursor-pointer text-2xl block underline'
-    : 'w-full cursor-pointer text-center text-2xl block active:underline';
+    ? 'w-full text-[#f1f7ed] text-center cursor-pointer text-2xl block underline underline-offset-12'
+    : 'w-full cursor-pointer text-center text-2xl block active:text-white';
 
   return (
     <Link href='/about' className={buttonStyle}>
