@@ -10,6 +10,7 @@ import SearchBar from '@/componenets/SearchBar';
 import HashGrid from '@/componenets/HashGrid';
 import Logo from '@/componenets/Logo';
 import UserButtons from '@/componenets/UserButtons';
+import Footer from '@/componenets/Footer';
 
 export default function Home({
   mainPost,
@@ -60,6 +61,7 @@ export default function Home({
               visibility={true}
               handleClick={handleHashtagClick}
             />
+            <Footer />
           </div>
           <PostContainer mainPost={mainPost} posts={filteredPosts} />
         </Container>
