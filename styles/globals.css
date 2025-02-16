@@ -35,6 +35,14 @@
   .slowly-delayed {
     animation: slowly 1200ms ease-in-out 1200ms forwards;
   }
+
+  .title {
+    background: rgba(69, 69, 69, 1) 15%;
+  }
+
+  .flashy {
+    animation: slowly 2400ms ease-in-out alternate infinite;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,8 +58,7 @@ body {
 }
 
 nav {
-  color: var(--background);
-  background: #686868;
+  background: var(--background);
 }
 
 button {
@@ -71,7 +78,7 @@ button {
 
 @keyframes slowly {
   from {
-    opacity: 0;
+    opacity: 0.4;
   }
   to {
     opacity: 1;

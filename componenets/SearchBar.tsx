@@ -16,13 +16,13 @@ export default function SearchBar({
   return (
     <>
       <form
-        className='mx-auto py-10 h-min'
+        className='text-center py-10 h-min'
         onSubmit={(e) => handleSubmit(e, query)}
       >
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className='bord bg-[#f1f7ed] text-black rounded-l-xl h-10'
+          className='bord bg-[#f1f7ed] text-black rounded-l-xl h-10 w-64'
           placeholder='Search here...'
         />
         <input

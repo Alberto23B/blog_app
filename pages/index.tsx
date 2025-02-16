@@ -11,16 +11,22 @@ import HashGrid from '@/componenets/HashGrid';
 import Logo from '@/componenets/Logo';
 import UserButtons from '@/componenets/UserButtons';
 
-export default function Home({ posts }: { posts: Post[] }) {
+export default function Home({
+  mainPost,
+  otherPosts,
+}: {
+  mainPost: Post;
+  otherPosts: Post[];
+}) {
   const router = useRouter();
   const { hashtag } = router.query;
 
-  const filteredPosts = filterPosts(hashtag, posts);
+  const filteredPosts = filterPosts(hashtag, otherPosts);
 
   const popularHashtags: string[] = useMemo(() => {
     const freqMap: FreqMap = {};
 
-    posts.forEach((post) => {
+    otherPosts.forEach((post) => {
       const tags = generateHashtags(post.title);
       tags.forEach((tag) => (freqMap[tag] = (freqMap[tag] || 0) + 1));
     });
@@ -29,8 +35,8 @@ export default function Home({ posts }: { posts: Post[] }) {
       .map(([tag, count]) => ({ tag, count }))
       .sort((a, b) => b.count - a.count)
       .map(({ tag }) => tag)
-      .slice(0, 10);
-  }, [posts]);
+      .slice(0, 30);
+  }, [otherPosts]);
 
   const handleHashtagClick = (tag: string) => {
     if (hashtag === tag) {
@@ -47,9 +53,6 @@ export default function Home({ posts }: { posts: Post[] }) {
           <div className='flex-shrink w-1/3 sm:block hidden '>
             <Logo />
             <UserButtons />
-          </div>
-          <PostContainer posts={filteredPosts} />
-          <div className='sm:flex flex-col hidden w-1/3 flex-shrink'>
             <SearchBar handleClick={handleHashtagClick} />
             <h2 className='m-4'>Buzzing right now:</h2>
             <HashGrid
@@ -58,6 +61,7 @@ export default function Home({ posts }: { posts: Post[] }) {
               handleClick={handleHashtagClick}
             />
           </div>
+          <PostContainer mainPost={mainPost} posts={filteredPosts} />
         </Container>
       </Layout>
     </>
@@ -68,9 +72,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const posts: Post[] = await res.json();
 
+  const mainPost = posts[0];
+  const otherPosts = posts.slice(1);
+
   return {
     props: {
-      posts,
+      mainPost,
+      otherPosts,
     },
   };
 };
