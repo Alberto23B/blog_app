@@ -51,10 +51,12 @@ export default function Home({
     <>
       <Layout>
         <Container>
-          <div className='flex-shrink w-1/3 sm:block hidden '>
-            <Logo />
-            <UserButtons />
-            <SearchBar handleClick={handleHashtagClick} />
+          <div className='flex-col justify-around w-1/3 sm:flex hidden '>
+            <div>
+              <Logo />
+              <UserButtons />
+              <SearchBar handleClick={handleHashtagClick} />
+            </div>
             <h2 className='m-4'>Buzzing right now:</h2>
             <HashGrid
               hashtags={popularHashtags}
