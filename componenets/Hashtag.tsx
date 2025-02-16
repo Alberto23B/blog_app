@@ -1,6 +1,5 @@
 'use client';
 import { HashProps } from '@/types/Types';
-import { hadUnsupportedValue } from 'next/dist/build/analysis/get-page-static-info';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
