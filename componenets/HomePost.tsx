@@ -3,6 +3,7 @@ import HashGrid from './HashGrid';
 import { capitalizeTitle, limitText, generateHashtags } from '@/lib/helpers';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export default function HomePost({ post }: { post: Post }) {
   const title = capitalizeTitle(post.title);
@@ -25,10 +26,18 @@ export default function HomePost({ post }: { post: Post }) {
       {post && (
         <>
           <div className='col-span-2 mx-auto h-fit bord rounded-br-xl'>
-            <p className='float-end w-1/5 block bg-cyan-800 pr-4 text-end'>
+            <p className='absolute z-20 w-1/5 block bg-cyan-800 pr-4 text-end rounded-tl-xl'>
               Latest
             </p>
-            <div className='w-full abstract h-[25vh] rounded-tl-xl'></div>
+            <div className='w-full h-[20vh] rounded-tl-xl relative'>
+              <Image
+                src='/post_bg.png'
+                alt='bg'
+                layout='fill'
+                loading='lazy'
+                className='rounded-tl-xl'
+              />
+            </div>
             <Link href={`/posts/${post.id}`}>
               <h2 className='sm:text-4xl text-2xl px-4 py-2 title'>{title}</h2>
             </Link>

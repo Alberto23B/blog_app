@@ -1,4 +1,5 @@
 import { generateHashtags, capitalizeTitle } from '@/lib/helpers';
+import Image from 'next/image';
 import { Post } from '@/types/Types';
 import { useRouter } from 'next/router';
 import Header from '@/componenets/Header';
@@ -22,7 +23,15 @@ export default function MainPost({ post }: { post: Post }) {
 
   return (
     <>
-      <div className='w-full abstract min-h-[10vh] rounded-tl-xl'></div>
+      <div className='w-full abstract min-h-[10vh] relative rounded-tl-xl'>
+        <Image
+          src='/post_bg.png'
+          alt='bg'
+          layout='fill'
+          loading='lazy'
+          className='rounded-tl-xl'
+        />
+      </div>
       <Header>{title}</Header>
       <Body>{post.body}</Body>
       <HashGrid
