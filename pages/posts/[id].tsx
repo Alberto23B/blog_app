@@ -24,7 +24,7 @@ export default function PostPage({
   return (
     <>
       <Layout>
-        <div className='m-auto w-2/3 min-h-[80vh] py-10 flex flex-wrap bord rounded-br-xl'>
+        <div className='m-auto w-2/3 min-h-[75vh] flex flex-wrap bord rounded-br-xl'>
           <MainPost post={post} />
         </div>
         <ShowMore place='post' />

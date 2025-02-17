@@ -12,8 +12,8 @@ export default function Hashtag({ hashtag }: HashProps) {
   const [isActive, setIsActive] = useState(hashtag === query);
 
   const hashtagStyle = isActive
-    ? 'rounded-xl bg-[#393737] w-fit px-4 max-h-16 inline-block border-white border'
-    : 'rounded-xl bg-[#393737] w-fit px-4 max-h-16 inline-block border-[#4a4848] border';
+    ? 'rounded-xl bg-[#393737] w-fit px-4 max-h-8 inline-block border-white border'
+    : 'rounded-xl bg-[#393737] w-fit px-4 max-h-8 inline-block border-[#4a4848] border';
 
   useEffect(() => {
     setIsActive(hashtag === query);
