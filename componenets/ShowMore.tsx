@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ShowMore() {
   return (
-    <div className='w-full h-20 col-span-2 pt-28 flex flex-col '>
+    <div className='w-full h-20 col-span-2 pt-12 sm:pt-28 flex flex-col '>
       <Image
         src='/show_more_nb.png'
         alt='show more'
