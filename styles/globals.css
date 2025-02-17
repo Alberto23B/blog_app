@@ -43,6 +43,14 @@
   .flashy {
     animation: slowly 2400ms ease-in-out alternate infinite;
   }
+
+  .abstract {
+    background-image: url('/post_bg.png');
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

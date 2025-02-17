@@ -11,6 +11,7 @@ import HashGrid from '@/componenets/HashGrid';
 import Logo from '@/componenets/Logo';
 import UserButtons from '@/componenets/UserButtons';
 import Footer from '@/componenets/Footer';
+import MobileMenu from '@/componenets/MobileMenu';
 
 export default function Home({
   mainPost,
@@ -50,6 +51,10 @@ export default function Home({
   return (
     <>
       <Layout>
+        <MobileMenu
+          popularHashtags={popularHashtags}
+          handleHashtagClick={handleHashtagClick}
+        />
         <Container>
           <div className='flex-col justify-around w-1/3 sm:flex hidden '>
             <div>
@@ -63,7 +68,7 @@ export default function Home({
               visibility={true}
               handleClick={handleHashtagClick}
             />
-            <Footer />
+            <Footer menu={false} />
           </div>
           <PostContainer mainPost={mainPost} posts={filteredPosts} />
         </Container>

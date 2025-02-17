@@ -27,12 +27,13 @@ export default function HomePost({ post }: { post: Post }) {
           <p className='float-end w-1/5 block bg-cyan-800 pr-4 text-end'>
             Latest
           </p>
+          <div className='w-full abstract h-[20vh] rounded-tl-xl'></div>
           <Link href={`/posts/${post.id}`}>
-            <h2 className='text-4xl px-4 py-2 title'>{title}</h2>
+            <h2 className='sm:text-4xl text-2xl px-4 py-2 title'>{title}</h2>
           </Link>
           <div className='p-4'>
-            <p className='sm:text-2xl hidden sm:block'>{post.body}</p>
-            <p className='sm:text-2xl block sm:hidden'>{body}</p>
+            <p className='sm:text-xl hidden sm:block'>{post.body}</p>
+            <p className='sm:text-xl block sm:hidden'>{body}</p>
           </div>
           <HashGrid
             hashtags={hashtags}

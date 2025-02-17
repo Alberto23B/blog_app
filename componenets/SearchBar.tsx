@@ -22,7 +22,7 @@ export default function SearchBar({
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className='bord bg-[#f1f7ed] text-black rounded-l-xl h-10 w-64'
+          className='bord bg-[#f1f7ed] text-black rounded-l-xl h-10 w-2/3'
           placeholder='Search here...'
         />
         <input
