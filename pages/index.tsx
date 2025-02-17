@@ -6,7 +6,6 @@ import { Post, FreqMap } from '@/types/Types';
 import { filterPosts, generateHashtags } from '@/lib/helpers';
 import Layout from '@/componenets/Layout';
 import Container from '@/componenets/Container';
-import SearchBar from '@/componenets/SearchBar';
 import HashGrid from '@/componenets/HashGrid';
 import Logo from '@/componenets/Logo';
 import UserButtons from '@/componenets/UserButtons';
@@ -62,8 +61,6 @@ export default function Home({
           >
             <Logo />
             <UserButtons />
-            <SearchBar handleClick={handleHashtagClick} />
-
             <h2 className='mx-4'>Buzzing right now:</h2>
             <HashGrid
               hashtags={popularHashtags}

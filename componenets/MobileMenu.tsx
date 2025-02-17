@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Logo from './Logo';
 import UserButtons from './UserButtons';
-import SearchBar from './SearchBar';
 import HashGrid from './HashGrid';
 import Footer from './Footer';
 
@@ -35,7 +34,6 @@ export default function MobileMenu({
           <div>
             <Logo />
             <UserButtons />
-            <SearchBar handleClick={handleHashtagClick} />
           </div>
           <h2 className='m-4'>Buzzing right now:</h2>
           <HashGrid
