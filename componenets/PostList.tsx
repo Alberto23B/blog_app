@@ -25,7 +25,10 @@ export default function PostList({ posts }: { posts: Post[] }) {
           const hashtags = generateHashtags(post.title);
 
           return (
-            <div key={post.id} className='bord my-2 rounded-br-xl'>
+            <div
+              key={post.id}
+              className='flex flex-col justify-around bord my-2 rounded-br-xl'
+            >
               <Link href={`/posts/${post.id}`}>
                 <h2 className='text-xl px-4 title'>{title}</h2>
               </Link>

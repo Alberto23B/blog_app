@@ -22,8 +22,10 @@ export default function HomePost({ post }: { post: Post }) {
   return (
     <>
       {post && (
-        <div className='col-span-2 border-l-0 border-t-0 border mx-auto h-96 border-cyan-800 rounded-br-xl'>
-          <p className='w-full block bg-cyan-800 flashy'>Latest</p>
+        <div className='col-span-2  mx-auto h-fit bord rounded-br-xl'>
+          <p className='float-end w-1/5 block bg-cyan-800 pr-4 text-end'>
+            Latest
+          </p>
           <Link href={`/posts/${post.id}`}>
             <h2 className='text-4xl px-4 py-2 title'>{title}</h2>
           </Link>
