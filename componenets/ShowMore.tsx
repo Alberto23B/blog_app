@@ -5,10 +5,14 @@ export default function ShowMore({ place }: { place: string }) {
   const property =
     place === 'home'
       ? {
-          style: 'w-full h-20 col-span-2 pt-12 sm:pt-28 flex flex-col',
+          style:
+            'w-full h-20 col-span-2 pt-12 sm:pt-28 flex flex-col opacity-0 slowly',
           href: '#other',
         }
-      : { style: 'w-full h-20 col-span-2 flex flex-col', href: '#related' };
+      : {
+          style: 'w-full h-20 col-span-2 flex flex-col opacity-0 slowly',
+          href: '#related',
+        };
 
   return (
     <div className={property.style}>

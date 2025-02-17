@@ -95,7 +95,7 @@ button {
 
 @keyframes slowly {
   from {
-    opacity: 0.4;
+    opacity: 0;
   }
   to {
     opacity: 1;

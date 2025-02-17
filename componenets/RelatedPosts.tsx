@@ -33,13 +33,13 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
     <div ref={ref} id='related' className={styling}>
       {posts.length !== 0 && (
         <>
-          <h2>Related to this topic:</h2>
-          <div className='flex justify-start py-2 whitespace-nowrap overflow-scroll mb-2 flex-nowrap mx-4 no-scrollbar gap-2'>
+          <h2 className='text-2xl'>Related to this topic:</h2>
+          <div className='flex justify-start py-2 h-auto whitespace-nowrap overflow-scroll mb-2 flex-nowrap mx-4 no-scrollbar gap-2'>
             {posts.map((post, i) => {
               return (
                 <div key={i}>
                   <Link href={`/posts/${post.id}`}>
-                    <h2 className='text-xl py-2 px-4 h-24 w-60 text-wrap line-clamp-3 bg-[#393737]'>
+                    <h2 className='text-xl py-2 px-4 h-32 w-60 text-wrap line-clamp-4 bg-[#393737]'>
                       {post.title}
                     </h2>
                   </Link>
