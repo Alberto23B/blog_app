@@ -37,14 +37,14 @@ export default function Home({
       .map(([tag, count]) => ({ tag, count }))
       .sort((a, b) => b.count - a.count)
       .map(({ tag }) => tag)
-      .slice(0, 30);
+      .slice(0, 20);
   }, [otherPosts]);
 
   const handleHashtagClick = (tag: string) => {
     if (hashtag === tag) {
-      router.push({ pathname: '/', query: {} });
+      router.push('/#other');
     } else {
-      router.push({ pathname: '/', query: { hashtag: tag } });
+      router.push(`/?hashtag=${tag}#other`);
     }
   };
 
@@ -56,13 +56,15 @@ export default function Home({
           handleHashtagClick={handleHashtagClick}
         />
         <Container>
-          <div className='flex-col justify-around w-1/3 sm:flex hidden '>
-            <div>
-              <Logo />
-              <UserButtons />
-              <SearchBar handleClick={handleHashtagClick} />
-            </div>
-            <h2 className='m-4'>Buzzing right now:</h2>
+          <div
+            id='lateral'
+            className='sticky top-0 flex-col justify-evenly w-1/3 h-screen md:flex hidden '
+          >
+            <Logo />
+            <UserButtons />
+            <SearchBar handleClick={handleHashtagClick} />
+
+            <h2 className='mx-4'>Buzzing right now:</h2>
             <HashGrid
               hashtags={popularHashtags}
               visibility={true}

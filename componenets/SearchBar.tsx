@@ -16,7 +16,7 @@ export default function SearchBar({
   return (
     <>
       <form
-        className='text-center py-10 h-min'
+        className='text-center h-min'
         onSubmit={(e) => handleSubmit(e, query)}
       >
         <input

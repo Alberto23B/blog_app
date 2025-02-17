@@ -16,8 +16,8 @@ export default function MobileMenu({
   const [isOpen, setIsOpen] = useState(false);
 
   const styling = isOpen
-    ? 'fixed top-0 left-0 w-64 h-screen bg-amber-600 z-50 transform transition-transform duration-300 sm:hidden translate-x-0 bg-cyan-800'
-    : 'fixed top-0 left-0 w-64 h-screen bg-amber-600 z-50 transform transition-transform duration-300 sm:hidden -translate-x-full bg-cyan-800';
+    ? 'fixed top-0 left-0 w-64 h-screen bg-amber-600 z-50 transform transition-transform duration-300 sm:hidden translate-x-0 abstract-mono'
+    : 'fixed top-0 left-0 w-64 h-screen bg-amber-600 z-50 transform transition-transform duration-300 sm:hidden -translate-x-full abstract-mono';
 
   return (
     <>

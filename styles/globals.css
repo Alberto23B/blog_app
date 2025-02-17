@@ -7,6 +7,7 @@
   --border: #686868;
   font-family: Arial, Helvetica, sans-serif;
   scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -41,11 +42,19 @@
   }
 
   .flashy {
-    animation: slowly 2400ms ease-in-out alternate infinite;
+    animation: slowly 1500ms ease-in-out alternate infinite;
   }
 
   .abstract {
     background-image: url('/post_bg.png');
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .abstract-mono {
+    background-image: url('/post_bg_mono.png');
     background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: center;
