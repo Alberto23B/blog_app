@@ -7,7 +7,7 @@ export default function PostContainer({ mainPost, posts }) {
     <div className='grid grid-cols-1 gap-4 px-5 md:px-0 md:w-3/5 pt-10 min-w-96 min-h-screen'>
       <div className='sm:h-auto min-h-screen'>
         <HomePost post={mainPost} />
-        <ShowMore />
+        <ShowMore place={'home'} />
       </div>
       <div
         id='other'

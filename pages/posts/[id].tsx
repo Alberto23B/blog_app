@@ -6,6 +6,7 @@ import Layout from '@/componenets/Layout';
 import ErrorPage from 'next/error';
 import MainPost from '@/componenets/MainPost';
 import RelatedPosts from '@/componenets/RelatedPosts';
+import ShowMore from '@/componenets/ShowMore';
 
 export default function PostPage({
   post,
@@ -23,9 +24,10 @@ export default function PostPage({
   return (
     <>
       <Layout>
-        <div className='m-auto w-2/3 py-10 flex flex-wrap bord rounded-br-xl'>
+        <div className='m-auto w-2/3 min-h-[80vh] py-10 flex flex-wrap bord rounded-br-xl'>
           <MainPost post={post} />
         </div>
+        <ShowMore place='post' />
         <RelatedPosts posts={relatedPosts} />
       </Layout>
     </>

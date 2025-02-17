@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function RelatedPosts({ posts }: { posts: Post[] }) {
   return (
-    <div className='w-2/3 m-auto slowly opacity-0'>
+    <div id='related' className='w-2/3 mt-20 m-auto slowly opacity-0'>
       {posts.length !== 0 && (
         <>
           <h2>Related to this topic:</h2>

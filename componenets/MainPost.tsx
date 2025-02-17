@@ -3,7 +3,6 @@ import { Post } from '@/types/Types';
 import { useRouter } from 'next/router';
 import Header from '@/componenets/Header';
 import Body from '@/componenets/Body';
-import Image from 'next/image';
 import HashGrid from '@/componenets/HashGrid';
 
 export default function MainPost({ post }: { post: Post }) {
@@ -23,15 +22,9 @@ export default function MainPost({ post }: { post: Post }) {
 
   return (
     <>
+      <div className='w-full abstract min-h-[10vh] rounded-tl-xl'></div>
       <Header>{title}</Header>
       <Body>{post.body}</Body>
-      <Image
-        src='/vercel.svg'
-        width={180}
-        height={180}
-        alt='placeholder'
-        className='mx-auto my-4'
-      />
       <HashGrid
         hashtags={postHashtags}
         visibility={true}
