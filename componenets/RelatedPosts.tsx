@@ -49,6 +49,7 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
           </div>
         </>
       )}
+      {posts.length === 0 && <p>No related posts</p>}
     </div>
   );
 }
