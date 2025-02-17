@@ -1,3 +1,5 @@
+import { NextRouter } from 'next/router';
+
 export interface Post {
   userId: number;
   id: number;
@@ -18,4 +20,10 @@ export interface HashProps {
 
 export interface FreqMap {
   [key: string]: number;
+}
+
+export interface HashRoute {
+  tag: string;
+  hashtag: string;
+  router: NextRouter;
 }

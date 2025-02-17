@@ -1,4 +1,4 @@
-import { Post } from '@/types/Types';
+import { Post, HashRoute } from '@/types/Types';
 
 export function limitText(text: string, limit: number): string {
   return text.length > limit ? text.slice(0, limit) + '...' : text;
@@ -66,3 +66,12 @@ export function filterRelatedPosts(
 
   return relatedPosts;
 }
+
+export const handleHashtagClick = (props: HashRoute) => {
+  const { hashtag, tag, router } = props;
+  if (hashtag === tag) {
+    router.push('/#other');
+  } else {
+    router.push(`/?hashtag=${tag}#other`);
+  }
+};
