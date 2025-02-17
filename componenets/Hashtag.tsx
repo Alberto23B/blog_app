@@ -2,8 +2,9 @@
 import { HashProps } from '@/types/Types';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 
-export default function Hashtag({ hashtag, handleClick }: HashProps) {
+export default function Hashtag({ hashtag }: HashProps) {
   const router = useRouter();
 
   const query = router.query.hashtag;
@@ -20,9 +21,9 @@ export default function Hashtag({ hashtag, handleClick }: HashProps) {
 
   return (
     <>
-      <button className={hashtagStyle} onClick={() => handleClick(hashtag)}>
+      <Link href={`?hashtag=${hashtag}#other`} className={hashtagStyle}>
         {hashtag}
-      </button>
+      </Link>
     </>
   );
 }

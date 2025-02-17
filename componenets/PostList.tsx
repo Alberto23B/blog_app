@@ -10,9 +10,9 @@ export default function PostList({ posts }: { posts: Post[] }) {
 
   const handleHashtagClick = (tag: string) => {
     if (hashtag === tag) {
-      router.push({ pathname: '/', query: {} });
+      router.push('/#other');
     } else {
-      router.push({ pathname: '/', query: { hashtag: tag } });
+      router.push(`/?hashtag=${tag}#other`);
     }
   };
 
