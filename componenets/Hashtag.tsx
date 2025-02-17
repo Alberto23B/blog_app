@@ -21,7 +21,7 @@ export default function Hashtag({ hashtag }: HashProps) {
 
   return (
     <>
-      <Link href={`?hashtag=${hashtag}#other`} className={hashtagStyle}>
+      <Link href={`/?hashtag=${hashtag}#other`} className={hashtagStyle}>
         {hashtag}
       </Link>
     </>
