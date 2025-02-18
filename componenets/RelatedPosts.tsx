@@ -60,7 +60,7 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
               return (
                 <div key={i}>
                   <Link href={`/posts/${post.id}`}>
-                    <h2 className='text-xl py-2 px-4 h-32 w-60 text-wrap line-clamp-4 bg-[#393737]'>
+                    <h2 className='text-xl py-2 px-4 h-32 bg-[#232020] text-[#f1f7ed] w-60 text-wrap line-clamp-4 dark:bg-[#393737]'>
                       {post.title}
                     </h2>
                   </Link>

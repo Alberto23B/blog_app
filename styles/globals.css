@@ -2,12 +2,25 @@
 @tailwind utilities;
 
 :root {
+  --foreground: #232020;
   --background: #f1f7ed;
-  --foreground: #171717;
-  --border: #686868;
+  --border: #4a4848;
+  --title_text: #f1f7ed;
+  --title: #393737;
+  --buttons: #a3a0a0;
   font-family: Arial, Helvetica, sans-serif;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #232020;
+    --foreground: #f1f7ed;
+    --title_text: #f1f7ed;
+    --title: #393737;
+    --buttons: #393737;
+  }
 }
 
 @layer utilities {
@@ -38,7 +51,8 @@
   }
 
   .title {
-    background: rgba(69, 69, 69, 1) 15%;
+    background-color: var(--title);
+    color: var(--title_text);
   }
 
   .flashy {
@@ -62,18 +76,11 @@
   }
 
   .smoothing {
-    background-color: #393737;
+    background-color: var(--buttons);
   }
 
   .smoothing:hover {
     animation: bgTransition 300ms ease-in forwards;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #232020;
-    --foreground: #f1f7ed;
   }
 }
 
@@ -127,7 +134,7 @@ button {
 
 @keyframes bgTransition {
   from {
-    background-color: #393737;
+    background-color: var(--buttons);
   }
   to {
     background-color: var(--background);

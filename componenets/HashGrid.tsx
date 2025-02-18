@@ -13,7 +13,7 @@ export default function HashGrid({
     <div className='flex justify-start overflow-scroll items-center mb-2 flex-wrap min-w-60 mx-4 no-scrollbar sm:gap-2'>
       {!visible && (
         <button
-          className='rounded-xl bg-[#393737] w-fit px-4 max-h-8 3xl:max-h-12 inline-block 3xl:text-3xl'
+          className='rounded-xl bg-[#a3a0a0] border w-fit px-4 max-h-8 3xl:max-h-12 inline-block 3xl:text-3xl smoothing'
           onClick={() => setVisible(!visible)}
         >
           #
