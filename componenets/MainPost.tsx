@@ -1,5 +1,5 @@
 import { generateHashtags, capitalizeTitle } from '@/lib/helpers';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { Post } from '@/types/Types';
 import { useRouter } from 'next/router';
 import Header from '@/componenets/Header';
@@ -23,7 +23,7 @@ export default function MainPost({ post }: { post: Post }) {
 
   return (
     <>
-      <div className='w-full abstract min-h-[10vh] relative rounded-tl-xl'>
+      <div className='w-full abstract min-h-[10vh] sm:min-h-[20vh] relative rounded-tl-xl'>
         <Image
           src='/post_bg.png'
           alt='bg'
