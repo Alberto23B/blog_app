@@ -1,16 +1,17 @@
 'use client';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 
 export default function ShowMore({ place }: { place: string }) {
   const property =
     place === 'home'
       ? {
           style:
-            'w-full h-1/3 justify-center col-span-2 flex flex-col opacity-0 slowly',
+            'w-full h-1/3 justify-center text-center col-span-2 flex flex-col opacity-0 slowly',
           href: '#other',
         }
       : {
-          style: 'w-full pt-4 col-span-2 flex flex-col opacity-0 slowly',
+          style:
+            'w-full pt-4 col-span-2 text-center flex flex-col opacity-0 slowly',
           href: '#related',
         };
 
@@ -21,7 +22,7 @@ export default function ShowMore({ place }: { place: string }) {
           src='/show_more_nb.png'
           alt='show more'
           width={150}
-          height={20}
+          height={50}
           className='mx-auto h-auto'
         />
       </a>
