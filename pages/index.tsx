@@ -1,9 +1,8 @@
-import { useMemo } from 'react';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import PostContainer from '@/componenets/PostsContainer';
-import { Post, FreqMap } from '@/types/Types';
-import { filterPosts, generateHashtags } from '@/lib/helpers';
+import { Post } from '@/types/Types';
+import { filterPosts, getPopularHashtags } from '@/lib/helpers';
 import Layout from '@/componenets/Layout';
 import Container from '@/componenets/Container';
 import HashGrid from '@/componenets/HashGrid';
@@ -24,20 +23,10 @@ export default function Home({
 
   const filteredPosts = filterPosts(hashtag, otherPosts);
 
-  const popularHashtags: string[] = useMemo(() => {
-    const freqMap: FreqMap = {};
-
-    otherPosts.forEach((post) => {
-      const tags = generateHashtags(post.title);
-      tags.forEach((tag) => (freqMap[tag] = (freqMap[tag] || 0) + 1));
-    });
-
-    return Object.entries(freqMap)
-      .map(([tag, count]) => ({ tag, count }))
-      .sort((a, b) => b.count - a.count)
-      .map(({ tag }) => tag)
-      .slice(0, 20);
-  }, [otherPosts]);
+  const popularHashtags: string[] = getPopularHashtags([
+    mainPost,
+    ...otherPosts,
+  ]);
 
   return (
     <>

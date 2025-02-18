@@ -1,4 +1,4 @@
-import { Post } from '@/types/Types';
+import { FreqMap, Post } from '@/types/Types';
 
 export function limitText(text: string, limit: number): string {
   return text.length > limit ? text.slice(0, limit) + '...' : text;
@@ -65,4 +65,23 @@ export function filterRelatedPosts(
   });
 
   return relatedPosts;
+}
+
+export function getPopularHashtags(posts: Post[]) {
+  const freqMap: FreqMap = {};
+
+  posts.forEach((post) => {
+    const tags = generateHashtags(post.title);
+    tags.forEach((tag) => {
+      freqMap[tag] = (freqMap[tag] || 0) + 1;
+    });
+  });
+
+  const popularHashtags: string[] = Object.entries(freqMap)
+    .map(([tag, count]) => ({ tag, count }))
+    .sort((a, b) => b.count - a.count)
+    .map(({ tag }) => tag)
+    .slice(0, 20);
+
+  return popularHashtags;
 }
