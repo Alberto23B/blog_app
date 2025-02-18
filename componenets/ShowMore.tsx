@@ -6,7 +6,7 @@ export default function ShowMore({ place }: { place: string }) {
     place === 'home'
       ? {
           style:
-            'w-full xl:h-1/3 justify-center text-center flex flex-col opacity-0 slowly',
+            'w-full mt-8 xl:mt-0 xl:h-1/3 justify-center text-center flex flex-col opacity-0 slowly',
           href: '#other',
         }
       : {

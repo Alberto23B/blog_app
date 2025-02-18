@@ -61,12 +61,14 @@ export default function Home({
           >
             <Logo />
             <UserButtons />
-            <h2 className='mx-4'>Buzzing right now:</h2>
-            <HashGrid
-              hashtags={popularHashtags}
-              visibility={true}
-              handleClick={handleHashtagClick}
-            />
+            <div>
+              <h2 className='mx-4 my-5 3xl:text-3xl'>Buzzing right now:</h2>
+              <HashGrid
+                hashtags={popularHashtags}
+                visibility={true}
+                handleClick={handleHashtagClick}
+              />
+            </div>
             <Footer menu={false} />
           </div>
           <PostContainer mainPost={mainPost} posts={filteredPosts} />

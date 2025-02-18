@@ -15,13 +15,16 @@ export default function MobileMenu({
   const [isOpen, setIsOpen] = useState(false);
 
   const styling = isOpen
-    ? 'fixed top-0 left-0 w-64 h-screen bg-amber-600 z-50 transform transition-transform duration-300 sm:hidden translate-x-0 abstract-mono'
-    : 'fixed top-0 left-0 w-64 h-screen bg-amber-600 z-50 transform transition-transform duration-300 sm:hidden -translate-x-full abstract-mono';
+    ? 'fixed top-0 left-0 w-72 h-screen z-50 transform transition-transform duration-300 sm:hidden translate-x-0 bg-[#232020] bord'
+    : 'fixed top-0 left-0 w-72 h-screen z-50 transform transition-transform duration-300 sm:hidden -translate-x-full bg-[#232020] bord';
 
   return (
     <>
-      <button className='sm:hidden block' onClick={() => setIsOpen(!isOpen)}>
-        Toggle Menu
+      <button
+        className='mx-2 text-4xl sm:hidden block'
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        &#8801;
       </button>
       <div id='menu' className={styling}>
         <button
@@ -31,16 +34,18 @@ export default function MobileMenu({
           &times;
         </button>
         <div className='flex flex-col justify-around h-full'>
-          <div>
+          <div className='h-auto'>
             <Logo />
             <UserButtons />
           </div>
-          <h2 className='m-4'>Buzzing right now:</h2>
-          <HashGrid
-            hashtags={popularHashtags}
-            visibility={true}
-            handleClick={handleHashtagClick}
-          />
+          <div>
+            <h2 className='m-4'>Buzzing right now:</h2>
+            <HashGrid
+              hashtags={popularHashtags}
+              visibility={true}
+              handleClick={handleHashtagClick}
+            />
+          </div>
           <Footer menu={true} />
         </div>
       </div>

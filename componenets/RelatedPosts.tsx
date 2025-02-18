@@ -8,8 +8,8 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
   const ref = useRef<HTMLDivElement>(null);
 
   const styling = isVisible
-    ? `sm:w-2/3 sm:mx-0 mx-4 mt-20 m-auto transition-opacity duration-1000 opacity-100`
-    : `sm:w-2/3 sm:mx-0 mx-4 mt-20 m-auto transition-opacity duration-1000 opacity-0`;
+    ? `sm:w-2/3 sm:mx-auto mx-4 mt-20 m-auto transition-opacity duration-1000 opacity-100`
+    : `sm:w-2/3 sm:mx-auto mx-4 mt-20 m-auto transition-opacity duration-1000 opacity-0`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -27,13 +27,13 @@ export default function PostList({ posts }: { posts: Post[] }) {
           return (
             <div
               key={post.id}
-              className='flex flex-col justify-around bord my-2 rounded-br-xl'
+              className='flex flex-col justify-around bord my-2 rounded-br-xl 3xl:my-4'
             >
               <Link href={`/posts/${post.id}`}>
-                <h2 className='text-xl px-4 title'>{title}</h2>
+                <h2 className='3xl:text-3xl text-xl px-4 title'>{title}</h2>
               </Link>
               <div className='p-4'>
-                <p className='text-sm'>
+                <p className='3xl:text-2xl text-sm'>
                   {body}
                   <Link
                     href={`/posts/${post.id}`}
