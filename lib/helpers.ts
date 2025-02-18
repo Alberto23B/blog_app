@@ -1,4 +1,4 @@
-import { Post, HashClick } from '@/types/Types';
+import { Post } from '@/types/Types';
 
 export function limitText(text: string, limit: number): string {
   return text.length > limit ? text.slice(0, limit) + '...' : text;
