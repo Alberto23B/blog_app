@@ -24,6 +24,9 @@ export default function MainPost({ post }: { post: Post }) {
   return (
     <>
       <div className='w-full abstract min-h-[10vh] sm:min-h-[20vh] relative rounded-tl-xl'>
+        <p className='absolute z-20 w-1/5 block bg-cyan-800 pr-4 text-end rounded-tl-xl 3xl:text-2xl'>
+          Posted by <span className='font-bold'>{post.userId}</span>
+        </p>
         <Image
           src='/post_bg.png'
           alt='bg'
