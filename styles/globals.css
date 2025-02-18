@@ -13,7 +13,7 @@
   scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #232020;
     --foreground: #f1f7ed;
@@ -21,7 +21,7 @@
     --title: #393737;
     --buttons: #393737;
   }
-}
+} */
 
 @layer utilities {
   .bord {
@@ -53,6 +53,10 @@
   .title {
     background-color: var(--title);
     color: var(--title_text);
+  }
+
+  .sidebar {
+    background-color: var(--background);
   }
 
   .flashy {

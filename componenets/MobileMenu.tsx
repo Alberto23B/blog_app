@@ -13,8 +13,8 @@ export default function MobileMenu({
   const [isOpen, setIsOpen] = useState(false);
 
   const styling = isOpen
-    ? 'fixed top-0 left-0 w-72 h-screen z-50 transform transition-transform duration-300 sm:hidden translate-x-0 bg-[#232020] bord'
-    : 'fixed top-0 left-0 w-72 h-screen z-50 transform transition-transform duration-300 sm:hidden -translate-x-full bg-[#232020] bord';
+    ? 'fixed top-0 left-0 w-72 h-screen z-50 transform transition-transform duration-300 sm:hidden translate-x-0 sidebar bord'
+    : 'fixed top-0 left-0 w-72 h-screen z-50 transform transition-transform duration-300 sm:hidden -translate-x-full sidebar bord';
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function MobileMenu({
       <div id='menu' className={styling}>
         <button
           onClick={() => setIsOpen(false)}
-          className='absolute top-4 right-4 text-white text-xl'
+          className='absolute top-4 right-4 text-xl'
         >
           &times;
         </button>
@@ -40,7 +40,7 @@ export default function MobileMenu({
             <h2 className='m-4'>Buzzing right now:</h2>
             <HashGrid hashtags={popularHashtags} visibility={true} />
           </div>
-          <Footer menu={true} />
+          <Footer />
         </div>
       </div>
     </>
