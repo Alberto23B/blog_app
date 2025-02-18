@@ -9,20 +9,18 @@ export interface Post {
 
 export interface HashGridProps {
   hashtags: string[];
-  handleClick: (tag: string) => void | undefined;
   visibility: boolean;
 }
 
 export interface HashProps {
   hashtag: string;
-  handleClick: (tag: string) => void | undefined;
 }
 
 export interface FreqMap {
   [key: string]: number;
 }
 
-export interface HashRoute {
+export interface HashClick {
   tag: string;
   hashtag: string;
   router: NextRouter;

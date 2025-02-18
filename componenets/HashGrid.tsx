@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 export default function HashGrid({
   hashtags,
-  handleClick,
   visibility = false,
 }: HashGridProps) {
   const [visible, setVisible] = useState(visibility);
@@ -22,9 +21,7 @@ export default function HashGrid({
       )}
       {visible &&
         hashtags.map((hashtag, i) => {
-          return (
-            <Hashtag key={i} hashtag={hashtag} handleClick={handleClick} />
-          );
+          return <Hashtag key={i} hashtag={hashtag} />;
         })}
     </div>
   );

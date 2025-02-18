@@ -39,21 +39,10 @@ export default function Home({
       .slice(0, 20);
   }, [otherPosts]);
 
-  const handleHashtagClick = (tag: string) => {
-    if (hashtag === tag) {
-      router.push('/#other');
-    } else {
-      router.push(`/?hashtag=${tag}#other`);
-    }
-  };
-
   return (
     <>
       <Layout>
-        <MobileMenu
-          popularHashtags={popularHashtags}
-          handleHashtagClick={handleHashtagClick}
-        />
+        <MobileMenu popularHashtags={popularHashtags} />
         <Container>
           <div
             id='lateral'
@@ -63,11 +52,7 @@ export default function Home({
             <UserButtons />
             <div>
               <h2 className='mx-4 my-5 3xl:text-3xl'>Buzzing right now:</h2>
-              <HashGrid
-                hashtags={popularHashtags}
-                visibility={true}
-                handleClick={handleHashtagClick}
-              />
+              <HashGrid hashtags={popularHashtags} visibility={true} />
             </div>
             <Footer menu={false} />
           </div>

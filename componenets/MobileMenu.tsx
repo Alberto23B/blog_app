@@ -7,10 +7,8 @@ import Footer from './Footer';
 
 export default function MobileMenu({
   popularHashtags,
-  handleHashtagClick,
 }: {
   popularHashtags: string[];
-  handleHashtagClick: (tag: string) => void;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,11 +38,7 @@ export default function MobileMenu({
           </div>
           <div>
             <h2 className='m-4'>Buzzing right now:</h2>
-            <HashGrid
-              hashtags={popularHashtags}
-              visibility={true}
-              handleClick={handleHashtagClick}
-            />
+            <HashGrid hashtags={popularHashtags} visibility={true} />
           </div>
           <Footer menu={true} />
         </div>

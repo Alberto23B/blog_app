@@ -2,24 +2,12 @@ import { Post } from '@/types/Types';
 import HashGrid from './HashGrid';
 import { capitalizeTitle, limitText, generateHashtags } from '@/lib/helpers';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import Image from 'next/legacy/image';
 
 export default function HomePost({ post }: { post: Post }) {
   const title = capitalizeTitle(post.title);
   const hashtags = generateHashtags(post.title);
   const body = limitText(post.body, 100);
-
-  const router = useRouter();
-  const { hashtag } = router.query;
-
-  const handleHashtagClick = (tag: string) => {
-    if (hashtag === tag) {
-      router.push('/#other');
-    } else {
-      router.push(`/?hashtag=${tag}#other`);
-    }
-  };
 
   return (
     <>
@@ -49,11 +37,7 @@ export default function HomePost({ post }: { post: Post }) {
               </p>
               <p className='3xl:text-3xl sm:text-2xl block sm:hidden'>{body}</p>
             </div>
-            <HashGrid
-              hashtags={hashtags}
-              visibility={true}
-              handleClick={handleHashtagClick}
-            />
+            <HashGrid hashtags={hashtags} visibility={true} />
           </div>
         </>
       )}
