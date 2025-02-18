@@ -60,6 +60,14 @@
     background-position: center;
     background-size: cover;
   }
+
+  .smoothing {
+    background-color: #393737;
+  }
+
+  .smoothing:hover {
+    animation: bgTransition 300ms ease-in forwards;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -114,5 +122,14 @@ button {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes bgTransition {
+  from {
+    background-color: #393737;
+  }
+  to {
+    background-color: var(--background);
   }
 }
