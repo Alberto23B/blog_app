@@ -14,7 +14,7 @@ export default function HomePost({ post }: { post: Post }) {
       {post && (
         <>
           <div className='col-span-2 mx-auto h-fit bord rounded-br-xl 3xl:h-[60vh]'>
-            <p className='absolute z-20 w-1/5 block bg-cyan-800 pr-4 text-end rounded-tl-xl 3xl:text-2xl'>
+            <p className='absolute z-20 w-1/5 block bg-cyan-700 pr-4 text-end rounded-tl-xl 3xl:text-2xl'>
               Latest
             </p>
             <div className='w-full h-[20vh] xl:h-[25vh] rounded-tl-xl relative'>

@@ -25,7 +25,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
                   {body}
                   <Link
                     href={`/posts/${post.id}`}
-                    className='rounded-xl text-cyan-800 w-fit px-4 mx-2 inline'
+                    className='rounded-xl text-cyan-700 w-fit px-4 mx-2 inline'
                   >
                     Show more
                   </Link>
