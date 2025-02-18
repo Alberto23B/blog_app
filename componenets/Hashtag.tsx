@@ -19,9 +19,12 @@ export default function Hashtag({ hashtag }: HashProps) {
     setIsActive(hashtag === query);
   }, [hashtag, query]);
 
+  const selectLink =
+    hashtag === query ? '/#other' : `/?hashtag=${hashtag}#other`;
+
   return (
     <>
-      <Link href={`/?hashtag=${hashtag}#other`} className={hashtagStyle}>
+      <Link href={selectLink} className={hashtagStyle}>
         {hashtag}
       </Link>
     </>
