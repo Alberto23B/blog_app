@@ -3,7 +3,7 @@ import HashGrid from './HashGrid';
 import { capitalizeTitle, limitText, generateHashtags } from '@/lib/helpers';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 export default function HomePost({ post }: { post: Post }) {
   const title = capitalizeTitle(post.title);
