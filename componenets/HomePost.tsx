@@ -19,11 +19,11 @@ export default function HomePost({ post }: { post: Post }) {
             </p>
             <div className='w-full h-[20vh] xl:h-[25vh] rounded-tl-xl relative'>
               <Image
-                src='/post_bg.png'
+                src='/post_bg.webp'
                 alt='bg'
                 layout='fill'
-                loading='lazy'
                 className='rounded-tl-xl'
+                priority
               />
             </div>
             <Link href={`/posts/${post.id}`}>

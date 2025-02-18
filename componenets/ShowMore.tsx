@@ -19,7 +19,7 @@ export default function ShowMore({ place }: { place: string }) {
     <div className={property.style}>
       <a href={property.href}>
         <Image
-          src='/show_more_nb.png'
+          src='/show_more_nb.webp'
           alt='show more'
           width={150}
           height={50}

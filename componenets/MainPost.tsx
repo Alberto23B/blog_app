@@ -16,7 +16,7 @@ export default function MainPost({ post }: { post: Post }) {
           Posted by <span className='font-bold'>{post.userId}</span>
         </p>
         <Image
-          src='/post_bg.png'
+          src='/post_bg.webp'
           alt='bg'
           layout='fill'
           loading='lazy'

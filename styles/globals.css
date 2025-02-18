@@ -13,7 +13,7 @@
   scroll-behavior: smooth;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background: #232020;
     --foreground: #f1f7ed;
@@ -21,7 +21,7 @@
     --title: #393737;
     --buttons: #393737;
   }
-} */
+}
 
 @layer utilities {
   .bord {
@@ -61,22 +61,6 @@
 
   .flashy {
     animation: slowly 1500ms ease-in-out alternate infinite;
-  }
-
-  .abstract {
-    background-image: url('/post_bg.png');
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .abstract-mono {
-    background-image: url('/post_bg_mono.png');
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 
   .smoothing {
