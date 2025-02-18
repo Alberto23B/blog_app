@@ -11,7 +11,7 @@ export default function PostContainer({ mainPost, posts }) {
       </div>
       <div
         id='other'
-        className='sm:block grid sm:grid-cols-2 gap-4 overflow-scroll no-scrollbar h-[90vh]'
+        className='sm:block grid gap-4 overflow-scroll no-scrollbar min-h-screen'
       >
         <PostList posts={posts} />
       </div>
