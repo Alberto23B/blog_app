@@ -22,15 +22,24 @@ export default function PostPage() {
             <br /> created by Alberto Biolchi
           </Header>
           <Body>
-            email:{' '}
-            <a href='mailto:biolchi.alberto23@gmail.com'>
-              biolchi.alberto23@gmail.com
-            </a>
-            <br />
-            portfolio:{' '}
-            <a href='https://my-portfolio-alberto23b.vercel.app/'>
-              https://my-portfolio-alberto23b.vercel.app/
-            </a>
+            <div>
+              email:{' '}
+              <a href='mailto:biolchi.alberto23@gmail.com'>
+                biolchi.alberto23@gmail.com
+              </a>
+            </div>
+            <div>
+              portfolio:{' '}
+              <a href='https://my-portfolio-alberto23b.vercel.app/'>
+                https://my-portfolio-alberto23b.vercel.app/
+              </a>
+            </div>
+            <div>
+              github:{' '}
+              <a href='https://github.com/Alberto23B'>
+                https://github.com/Alberto23B
+              </a>
+            </div>
           </Body>
         </div>
       </Layout>
