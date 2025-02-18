@@ -82,14 +82,16 @@ button {
   cursor: pointer;
 }
 
-@keyframes lineHeightExpand {
-  from {
-    line-height: 2rem;
-    opacity: 0;
-  }
-  to {
-    line-height: 4.5rem;
-    opacity: 1;
+@media only screen and (min-width: 600px) {
+  @keyframes lineHeightExpand {
+    from {
+      line-height: 2rem;
+      opacity: 0;
+    }
+    to {
+      line-height: 4.5rem;
+      opacity: 1;
+    }
   }
 }
 
