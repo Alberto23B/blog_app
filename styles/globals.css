@@ -95,6 +95,19 @@ button {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  @keyframes lineHeightExpand {
+    from {
+      line-height: 1.5rem;
+      opacity: 0;
+    }
+    to {
+      line-height: 2.5rem;
+      opacity: 1;
+    }
+  }
+}
+
 @keyframes slowly {
   from {
     opacity: 0;
