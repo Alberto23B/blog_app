@@ -8,8 +8,8 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
   const ref = useRef<HTMLDivElement>(null);
 
   const styling = isVisible
-    ? `w-2/3 mt-20 m-auto transition-opacity duration-1000 opacity-100`
-    : `w-2/3 mt-20 m-auto transition-opacity duration-1000 opacity-0`;
+    ? `sm:w-2/3 sm:mx-0 mx-4 mt-20 m-auto transition-opacity duration-1000 opacity-100`
+    : `sm:w-2/3 sm:mx-0 mx-4 mt-20 m-auto transition-opacity duration-1000 opacity-0`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,7 +33,7 @@ export default function RelatedPosts({ posts }: { posts: Post[] }) {
     <div ref={ref} id='related' className={styling}>
       {posts.length !== 0 && (
         <>
-          <h2 className='text-2xl'>Related to this topic:</h2>
+          <h2 className='text-2xl ml-4'>Related to this topic:</h2>
           <div className='flex justify-start py-2 h-auto whitespace-nowrap overflow-scroll mb-2 flex-nowrap mx-4 no-scrollbar gap-2'>
             {posts.map((post, i) => {
               return (
