@@ -51,7 +51,7 @@ This application is a responsive blog built with **Next.js** and **Tailwind CSS*
 ## Advanced Features Implemented
 
 - **Dynamic Routing**: Implemented for post pages via the `pages/posts/[id].tsx` folder. Uses `getStaticPaths` to define possible paths and `getStaticProps` to retrieve data for each post.
-- **Hashtag Search**: Allows filtering of posts based on hashtags present in the title. The `generateHashtags` function extracts hashtags from post titles, and the `filterPosts` function filters posts based on the selected hashtag.
+- **Hashtag Search**: Allows filtering of posts based on hashtags present in the title. The `generateHashtags` function extracts hashtags from post titles, and the `filterPosts` function filters posts based on the selected hashtag. The search is then performed using Next Router's query.
 - **Optimized Rendering**: `getStaticProps` and `getStaticPaths` are used to statically generate pages, improving performance and SEO.
 
 ## Project Structure
