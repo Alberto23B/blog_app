@@ -17,7 +17,7 @@ export default function PostPage({
 }) {
   const router = useRouter();
 
-  if (!router.isFallback && !post?.id) {
+  if (!router.isFallback && !post.id) {
     return <ErrorPage statusCode={404} />;
   }
 
@@ -42,6 +42,12 @@ export async function getStaticProps(
   );
 
   const postData = await res.json();
+
+  if (!postData) {
+    return {
+      notFound: true,
+    };
+  }
 
   const postHashtags = generateHashtags(postData.title);
 
