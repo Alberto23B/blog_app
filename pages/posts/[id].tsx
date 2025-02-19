@@ -21,6 +21,10 @@ export default function PostPage({
     return <ErrorPage statusCode={404} />;
   }
 
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <Layout>
