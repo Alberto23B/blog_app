@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @tailwind utilities;
 
+@theme {
+  --color-ivory: #4a4848;
+  --color-jet: #393737;
+  --color-sand: #a3a0a0;
+  --color-milk: #f1f7ed;
+  --color-wine: #232020;
+}
+
 :root {
   --foreground: #232020;
   --background: #f1f7ed;
@@ -8,7 +16,6 @@
   --title_text: #f1f7ed;
   --title: #393737;
   --buttons: #a3a0a0;
-  font-family: Arial, Helvetica, sans-serif;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
 }
@@ -44,10 +51,6 @@
 
   .slowly {
     animation: slowly 1200ms ease-in-out 500ms forwards;
-  }
-
-  .slowly-delayed {
-    animation: slowly 1200ms ease-in-out 1200ms forwards;
   }
 
   .title {

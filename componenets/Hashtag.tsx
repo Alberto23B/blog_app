@@ -13,7 +13,7 @@ export default function Hashtag({ hashtag }: HashProps) {
 
   const hashtagStyle = isActive
     ? 'rounded-xl  w-fit px-4 max-h-8 mr-1 sm:mr-0 3xl:max-h-12 inline-block border-white border 3xl:text-3xl smoothing'
-    : 'rounded-xl  w-fit 3xl:px-6 px-4 max-h-8 mr-1 sm:mr-0 3xl:max-h-12 inline-block border-[#4a4848] border 3xl:text-3xl smoothing';
+    : 'rounded-xl  w-fit 3xl:px-6 px-4 max-h-8 mr-1 sm:mr-0 3xl:max-h-12 inline-block border-ivory border 3xl:text-3xl smoothing';
 
   useEffect(() => {
     setIsActive(hashtag === query);

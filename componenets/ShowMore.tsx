@@ -23,7 +23,7 @@ export default function ShowMore({ place }: { place: string }) {
           alt='show more'
           width={150}
           height={50}
-          className='mx-auto h-auto'
+          className='mx-auto h-auto brightness-90'
         />
       </a>
       <button className='font-bold text-2xl flashy'>
