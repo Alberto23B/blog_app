@@ -1,7 +1,7 @@
-import Layout from '@/componenets/Layout';
-import Image from "next/legacy/image";
-import Header from '@/componenets/Header';
-import Body from '@/componenets/Body';
+import Layout from '@/components/Layout';
+import Image from 'next/legacy/image';
+import Header from '@/components/Header';
+import Body from '@/components/Body';
 
 export default function PostPage() {
   return (

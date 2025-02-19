@@ -1,7 +1,7 @@
 import { Post } from '@/types/Types';
 import Link from 'next/link';
 import { capitalizeTitle, limitText, generateHashtags } from '@/lib/helpers';
-import HashGrid from '@/componenets/HashGrid';
+import HashGrid from '@/components/HashGrid';
 
 export default function PostList({ posts }: { posts: Post[] }) {
   return (

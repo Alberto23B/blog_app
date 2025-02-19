@@ -1,9 +1,9 @@
 import { generateHashtags, capitalizeTitle } from '@/lib/helpers';
 import Image from 'next/legacy/image';
 import { Post } from '@/types/Types';
-import Header from '@/componenets/Header';
-import Body from '@/componenets/Body';
-import HashGrid from '@/componenets/HashGrid';
+import Header from '@/components/Header';
+import Body from '@/components/Body';
+import HashGrid from '@/components/HashGrid';
 
 export default function MainPost({ post }: { post: Post }) {
   const title = capitalizeTitle(post.title);

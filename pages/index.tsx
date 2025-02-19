@@ -1,15 +1,15 @@
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
-import PostContainer from '@/componenets/PostsContainer';
+import PostContainer from '@/components/PostsContainer';
 import { Post } from '@/types/Types';
 import { filterPosts, getPopularHashtags } from '@/lib/helpers';
-import Layout from '@/componenets/Layout';
-import Container from '@/componenets/Container';
-import HashGrid from '@/componenets/HashGrid';
-import Logo from '@/componenets/Logo';
-import UserButtons from '@/componenets/UserButtons';
-import Footer from '@/componenets/Footer';
-import MobileMenu from '@/componenets/MobileMenu';
+import Layout from '@/components/Layout';
+import Container from '@/components/Container';
+import HashGrid from '@/components/HashGrid';
+import Logo from '@/components/Logo';
+import UserButtons from '@/components/UserButtons';
+import Footer from '@/components/Footer';
+import MobileMenu from '@/components/MobileMenu';
 
 export default function Home({
   mainPost,

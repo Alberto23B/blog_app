@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 import { Post } from '@/types/Types';
 import { filterRelatedPosts, generateHashtags } from '@/lib/helpers';
 import { GetStaticPropsContext } from 'next';
-import Layout from '@/componenets/Layout';
+import Layout from '@/components/Layout';
 import ErrorPage from 'next/error';
-import MainPost from '@/componenets/MainPost';
-import RelatedPosts from '@/componenets/RelatedPosts';
-import ShowMore from '@/componenets/ShowMore';
+import MainPost from '@/components/MainPost';
+import RelatedPosts from '@/components/RelatedPosts';
+import ShowMore from '@/components/ShowMore';
 
 export default function PostPage({
   post,
