@@ -28,7 +28,7 @@ export default function HomePost({ post }: { post: Post }) {
               />
             </div>
             <Link href={`/posts/${post.id}`}>
-              <h2 className='3xl:text-7xl sm:text-4xl text-2xl px-4 py-2 title'>
+              <h2 className='3xl:text-7xl sm:text-4xl font-bold text-2xl px-4 py-2 title'>
                 {title}
               </h2>
             </Link>

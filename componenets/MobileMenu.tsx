@@ -37,7 +37,7 @@ export default function MobileMenu({
             <UserButtons />
           </div>
           <div>
-            <h2 className='m-4'>Buzzing right now:</h2>
+            <h2 className='m-4 font-bold'>Buzzing right now:</h2>
             <HashGrid hashtags={popularHashtags} visibility={true} />
           </div>
           <Footer />

@@ -40,7 +40,9 @@ export default function Home({
             <Logo />
             <UserButtons />
             <div>
-              <h2 className='mx-4 my-5 3xl:text-3xl'>Buzzing right now:</h2>
+              <h2 className='mx-4 font-bold my-5 3xl:text-3xl'>
+                Buzzing right now:
+              </h2>
               <HashGrid hashtags={popularHashtags} visibility={true} />
             </div>
             <Footer />
