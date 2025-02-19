@@ -84,7 +84,7 @@ blog_app/
 
 ## Deploy
 
-The application is deployed on **Vercel** at the link:
+The application is deployed on **Vercel** at the link: https://blog-app-phi-gilt.vercel.app/
 
 ## Code Quality
 
