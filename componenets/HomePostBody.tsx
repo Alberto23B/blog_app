@@ -5,9 +5,7 @@ export default function HomePostBody({
 }) {
   return (
     <div className='px-4 py-8'>
-      <p className='3xl:text-3xl 3xl:my-8 sm:text-xl hidden sm:block'>
-        {children}
-      </p>
+      <p className='3xl:text-3xl 3xl:my-8 sm:text-xl'>{children}</p>
     </div>
   );
 }
