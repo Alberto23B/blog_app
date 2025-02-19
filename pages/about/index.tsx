@@ -1,5 +1,5 @@
 import Layout from '@/componenets/Layout';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Header from '@/componenets/Header';
 import Body from '@/componenets/Body';
 
