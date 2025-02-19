@@ -15,7 +15,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
           return (
             <div
               key={post.id}
-              className='flex flex-col bord my-2 max-h-56 sm:max-h-auto rounded-br-xl 3xl:my-4'
+              className='flex flex-col bord my-2 max-h-60 sm:max-h-auto rounded-br-xl 3xl:my-4'
             >
               <Link href={`/posts/${post.id}`}>
                 <h2 className='3xl:text-3xl text-xl px-4 title'>{title}</h2>

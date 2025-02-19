@@ -9,10 +9,8 @@ export default function PostContainer({ mainPost, posts }) {
         <HomePost post={mainPost} />
         <ShowMore place={'home'} />
       </div>
-      <div
-        id='other'
-        className='sm:block grid gap-4 overflow-scroll no-scrollbar min-h-auto'
-      >
+      <div id='other'></div>
+      <div className='sm:block grid gap-4 overflow-scroll mt-6 sm:mt-4 no-scrollbar min-h-auto'>
         <PostList posts={posts} />
       </div>
     </div>
