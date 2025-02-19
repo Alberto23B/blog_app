@@ -3,6 +3,7 @@ import HashGrid from './HashGrid';
 import { capitalizeTitle, limitText, generateHashtags } from '@/lib/helpers';
 import Link from 'next/link';
 import Image from 'next/legacy/image';
+import HomePostBody from './HomePostBody';
 
 export default function HomePost({ post }: { post: Post }) {
   const title = capitalizeTitle(post.title);
@@ -31,12 +32,15 @@ export default function HomePost({ post }: { post: Post }) {
                 {title}
               </h2>
             </Link>
-            <div className='px-4 py-8'>
-              <p className='3xl:text-3xl 3xl:my-8 sm:text-xl hidden sm:block'>
-                {post.body}
-              </p>
-              <p className='3xl:text-3xl sm:text-2xl block sm:hidden'>{body}</p>
-            </div>
+            <HomePostBody>
+              {body}
+              <Link
+                href={`/posts/${post.id}`}
+                className='rounded-xl text-cyan-700 w-fit px-4 mx-2 inline'
+              >
+                Show more
+              </Link>
+            </HomePostBody>
             <HashGrid hashtags={hashtags} visibility={true} />
           </div>
         </>
