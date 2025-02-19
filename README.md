@@ -34,8 +34,9 @@ This application is a responsive blog built with **Next.js** and **Tailwind CSS*
 
 ### General Approach
 
--This app is meant to be user friendly, with just the necessary amount of interactions needed to move around the pages.
--In the desktop version everything interactive is on screen, while in the mobile version the search elements are hidden inside a lateral menu. The design is responsive to show all the elements correctly on every device.
+- This app is meant to be user friendly, with just the necessary amount of interactions needed to move around the pages.
+- In the desktop version everything interactive is on screen, while in the mobile version the search elements are hidden inside a lateral menu. The design is responsive to show all the elements correctly on every device.
+- Home and About are highlighted to comunicate to the user where it is during navigation.
 
 ### Next.js
 
