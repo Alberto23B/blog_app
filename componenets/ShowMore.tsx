@@ -27,7 +27,15 @@ export default function ShowMore({ place }: { place: string }) {
         />
       </a>
       <button className='font-bold text-2xl flashy'>
-        <a href={property.href}>&#11167;</a>
+        <a href={property.href} className='text-2xl'>
+          {/* <Image
+            src={'/caret-down.svg'}
+            alt='show more'
+            width={25}
+            height={25}
+          /> */}
+          &#9660;
+        </a>
       </button>
     </div>
   );
