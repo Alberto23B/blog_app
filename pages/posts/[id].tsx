@@ -64,7 +64,9 @@ export async function getStaticPaths() {
   const data = await posts.json();
 
   return {
-    paths: data?.map((post: Post) => `/posts/${post.id}`) || [],
+    paths: data.map((post: Post) => ({
+      params: { id: post.id.toString() },
+    })),
     fallback: true,
   };
 }
